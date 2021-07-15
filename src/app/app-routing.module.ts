@@ -5,7 +5,6 @@ import { PorRegionComponent } from './paises/pages/por-region/por-region.compone
 import { PorCapitalComponent } from './paises/pages/por-capital/por-capital.component';
 import { VerPaisComponent } from './paises/pages/ver-pais/ver-pais.component';
 
-
 const routes: Routes =[
   {
     path:'',
@@ -28,12 +27,7 @@ const routes: Routes =[
     path:'**',
     redirectTo: ''
   }
-
-
-
 ]
-
-
 @NgModule({
   imports:[
     RouterModule.forRoot(routes)
@@ -43,5 +37,4 @@ const routes: Routes =[
   ]
 })
 export class AppRoutingModule{
-
 }

@@ -9,12 +9,14 @@ import { Country } from '../../interfaces/paises.interface';
   ]
 })
 export class PorPaisComponent{
-
   termino:string = ''
   hayError:boolean = false;
   paises:Country[] = [];
 
-
+  /**
+   * @description Recibo el arreglo de tipo Country y lo igualo con el arreglo creado al principio 
+   * para mostrarlo en pantalla
+   */
   buscar(){
     this.hayError = false;
     this.paisService.buscarPais(this.termino)
@@ -26,8 +28,5 @@ export class PorPaisComponent{
             this.paises = [];
           });
         }
-
   constructor(private paisService:PaisesService) { }
-
-
 }

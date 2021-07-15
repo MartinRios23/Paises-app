@@ -9,13 +9,13 @@ import { Country } from '../interfaces/paises.interface';
 export class PaisesService {
 
   private api_url = 'https://restcountries.eu/rest/v2';
-
   constructor(private http:HttpClient) { }
-
+  /**
+   * @param termino 
+   * @returns Array of Countrys
+   */
   buscarPais(termino:string):Observable<Country[]>{
-
     const url = `${this.api_url}/name/${termino}`;
     return this.http.get<Country[]>(url);
-
   }
 }

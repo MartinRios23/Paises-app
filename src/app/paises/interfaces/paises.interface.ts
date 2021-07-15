@@ -1,12 +1,3 @@
-// To parse this data:
-//
-//   import { Convert } from "./file";
-//
-//   const rESTCountryResponse = Convert.toRESTCountryResponse(json);
-//
-// These functions will throw an error if the JSON doesn't
-// match the expected interface, even if the JSON is valid.
-
 export interface Country {
   name:           string;
   topLevelDomain: string[];
