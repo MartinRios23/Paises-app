@@ -20,7 +20,7 @@ import { PaisesInputComponent } from './components/paises-input/paises-input.com
     PorRegionComponent,
     VerPaisComponent,
     PaisesTablaComponent,
-    PaisesInputComponent
+    PaisesInputComponent,
   ],
   imports: [
     CommonModule,
