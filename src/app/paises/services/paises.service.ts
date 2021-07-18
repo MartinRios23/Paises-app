@@ -38,4 +38,14 @@ export class PaisesService {
     const url = `${this.api_url}/alpha/${id}`;
     return this.http.get<Country>(url);
   }
+
+  /**
+   *
+   * @param region
+   * @returns Array of countrys for Region
+   */
+  buscarPorRegion(region: string): Observable<Country[]> {
+    const url = `${this.api_url}/region/${region}`;
+    return this.http.get<Country[]>(url);
+  }
 }
