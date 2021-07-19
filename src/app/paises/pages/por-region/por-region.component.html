@@ -10,7 +10,6 @@
       *ngFor="let region of regiones"
       [class]="asignarClaseCss(region)"
       (click)="activarRegion(region)"
-      (click)='buscar(region)'
     >
     <!--El contenido entre corchetes significa que puedo agregar cierta clase al boton
     si cumple determinada condición

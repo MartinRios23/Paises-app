@@ -11,7 +11,7 @@ import { PaisesService } from '../../services/paises.service';
         margin-right: 5px;
       }
       .activo {
-        background-color: blue;
+        background-color: orange;
         color: white;
       }
     `,
@@ -22,19 +22,22 @@ export class PorRegionComponent {
   regionActiva: string = '';
   tablaRegiones: Country[] = [];
 
-  constructor(private paisesService: PaisesService) {}
+  constructor(private paisesService: PaisesService) { }
+
   activarRegion(region: string) {
+    if(region === this.regionActiva) {return;}
     this.regionActiva = region;
+    this.tablaRegiones = [];
+
+    this.paisesService.buscarPorRegion(region)
+    .subscribe(regiones => {
+      this.tablaRegiones = regiones;
+    });
+
   }
   //La sintaxis se leeria asi: Si la region es igual a al rgion activa, aplica la primera clase. Sino, la otra
-  asignarClaseCss(region:string):string{
-    return (region === this.regionActiva) ? 'btn btn-primary': 'btn btn-outline-primary'
+  asignarClaseCss(region: string): string {
+    return (region === this.regionActiva) ? 'btn btn-primary' : 'btn btn-outline-primary'
   }
 
-  buscar(region:string){
-    this.paisesService.buscarPorRegion(region)
-        .subscribe(regiones =>{
-          this.tablaRegiones = regiones;
-        });
-  }
 }
